@@ -3,17 +3,14 @@ DECLARE SUB SPEAK (text$)
 SCREEN 9
 CLS
 
-LET QUIT = 1
+SETUP
 
-REM             Here's a test of things
-REM             Resolution: 640x350
-REM             Column: width 80, height 25
+'             Here's a test of things
+'             Resolution: 640x350
+'             Column: width 80, height 25
 
 LOCATE 25, 80
 
-REM                     ---------
-REM                     GAME LOOP
-REM                     ---------
 DO
 CLS
 TASKS
@@ -22,6 +19,10 @@ SPEAK ("AND MORE DIALOGUE")
         WEND
 LOOP WHILE QUIT = 0
 END
+
+SUB SETUP
+        LET QUIT = 1
+END SUB
 
 SUB SPEAK (text$)
         LOCATE 22, 2
@@ -53,4 +54,3 @@ SUB TASKS
         PRINT "MISC.     ";
         PRINT "48"
 END SUB
-
